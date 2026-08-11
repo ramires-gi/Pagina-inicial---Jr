@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JR Intimates</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #FAF6F2;
+    --rose-gold: #D4A373;
+    --rose-gold-soft: #E9CBB4;
+    --text-dark: #3E332C;
+    --text-muted: #8A7A6D;
+    --white: #FFFFFF;
+    --border-soft: #EDD9C9;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body{
+    background: var(--bg);
+    background-image:
+      radial-gradient(circle at 15% 10%, rgba(212,163,115,0.06), transparent 40%),
+      radial-gradient(circle at 85% 90%, rgba(212,163,115,0.08), transparent 45%);
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-dark);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 56px 20px 40px;
+  }
+
+  .card{
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Header */
+  .logo{
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+    border: 1.5px solid var(--rose-gold);
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .logo-inner{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--rose-gold);
+    letter-spacing: 1px;
+  }
+
+  .brand-name{
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    font-size: 28px;
+    letter-spacing: 1px;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+  }
+
+  .divider{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--rose-gold);
+    margin-bottom: 16px;
+  }
+
+  .divider::before,
+  .divider::after{
+    content: "";
+    width: 34px;
+    height: 1px;
+    background: var(--border-soft);
+  }
+
+  .divider svg{ width: 14px; height: 14px; }
+
+  .subtopics{
+    font-size: 13px;
+    color: var(--text-muted);
+    letter-spacing: 0.3px;
+    line-height: 1.8;
+    margin-bottom: 34px;
+  }
+
+  .subtopics .line-2{
+    font-size: 12px;
+  }
+
+  /* Buttons */
+  .links{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 46px;
+  }
+
+  .link-btn{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background: var(--white);
+    border: 1px solid var(--border-soft);
+    border-radius: 999px;
+    padding: 12px 18px;
+    text-decoration: none;
+    color: var(--text-dark);
+    font-size: 14.5px;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    box-shadow: 0 1px 2px rgba(212,163,115,0.05);
+  }
+
+  .link-btn:hover{
+    transform: translateY(-2px);
+    border-color: var(--rose-gold);
+    box-shadow: 0 8px 18px rgba(212,163,115,0.16);
+  }
+
+  .link-btn:focus-visible{
+    outline: 2px solid var(--rose-gold);
+    outline-offset: 3px;
+  }
+
+  .icon-circle{
+    flex: 0 0 auto;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #FBF1E9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+  }
+
+  .icon-circle svg{
+    width: 16px;
+    height: 16px;
+    stroke: var(--rose-gold);
+    fill: none;
+  }
+
+  .link-text{
+    flex: 1 1 auto;
+    text-align: center;
+  }
+
+  .arrow{
+    flex: 0 0 auto;
+    width: 16px;
+    height: 16px;
+    opacity: 0.45;
+  }
+
+  .arrow svg{ width: 100%; height: 100%; stroke: var(--text-muted); }
+
+  /* Footer */
+  .footer{
+    text-align: center;
+  }
+
+  .footer-cursive{
+    font-family: 'Great Vibes', cursive;
+    font-size: 26px;
+    color: var(--rose-gold);
+    margin-bottom: 6px;
+  }
+
+  .footer-caption{
+    font-size: 10.5px;
+    letter-spacing: 1.6px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .link-btn{ transition: none; }
+  }
+
+  @media (max-width: 380px){
+    .brand-name{ font-size: 25px; }
+    .link-btn{ padding: 11px 14px; font-size: 13.5px; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="card">
+
+    <!-- Header -->
+    <div class="logo">
+      <div class="logo-inner">JR</div>
+    </div>
+
+    <h1 class="brand-name">JR Intimates</h1>
+
+    <div class="divider">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-6.7-4.35-9.3-8.1C1 10.2 1.6 6.9 4.4 5.4c2.3-1.2 4.7-.3 6 1.4l1.6 2 1.6-2c1.3-1.7 3.7-2.6 6-1.4 2.8 1.5 3.4 4.8 1.7 7.5C18.7 16.65 12 21 12 21z"/></svg>
+    </div>
+
+    <p class="subtopics">
+      Lingeries • Beachwear • Cosméticos<br>
+      <span class="line-2">São José dos Campos • Jacareí • Enviamos para todo o Brasil</span>
+    </p>
+
+    <!-- Links -->
+    <nav class="links">
+
+      <a href="https://jrintimates4.lojavirtualnuvem.com.br/" target="_blank" rel="noopener" class="link-btn">
+        <span class="icon-circle">
+          <svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="9"></circle>
+            <path d="M3 12h18"></path>
+            <path d="M12 3c2.5 2.6 4 6 4 9s-1.5 6.4-4 9c-2.5-2.6-4-6-4-9s1.5-6.4 4-9z"></path>
+          </svg>
+        </span>
+        <span class="link-text">Compre pelo site</span>
+        <span class="arrow">
+          <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg>
+        </span>
+      </a>
+
+      <a href="https://api.whatsapp.com/send/?phone=5512991734231&text&type=phone_number&app_absent=0" target="_blank" rel="noopener" class="link-btn">
+        <span class="icon-circle">
+          <svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.5 12a8.5 8.5 0 1 1-4-7.2"></path>
+            <path d="M12 3.5a8.5 8.5 0 0 1 8.3 6.7L21 4l-6.3.9"></path>
+            <path d="M8.5 9.5c.3 2 2.3 4 4.3 4.3.6.1.9-.5.7-1l-.5-1c-.2-.4-.6-.4-.9-.2l-.3.2c-.6-.4-1.2-1-1.6-1.6l.2-.3c.2-.3.2-.7-.2-.9l-1-.5c-.5-.2-1.1.1-1 .7z" fill="var(--rose-gold)" stroke="none"></path>
+          </svg>
+        </span>
+        <span class="link-text">Chame no WhatsApp</span>
+        <span class="arrow">
+          <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg>
+        </span>
+      </a>
+
+      <a href="#" class="link-btn">
+        <span class="icon-circle">
+          <svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3l2.2 4.9 5.3.6-4 3.7 1.1 5.3L12 14.9 7.4 17.5l1.1-5.3-4-3.7 5.3-.6z"></path>
+          </svg>
+        </span>
+        <span class="link-text">Grupo VIP – Novidades e Promoções</span>
+        <span class="arrow">
+          <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg>
+        </span>
+      </a>
+
+      <a href="https://www.tiktok.com/@jr.intimates?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener" class="link-btn">
+        <span class="icon-circle">
+          <svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 3c.3 2 1.8 3.7 4 4v3c-1.5 0-2.9-.4-4-1.2v6.4a5.8 5.8 0 1 1-5-5.7v3.1a2.7 2.7 0 1 0 2 2.6V3h3z"></path>
+          </svg>
+        </span>
+        <span class="link-text">TikTok</span>
+        <span class="arrow">
+          <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg>
+        </span>
+      </a>
+
+    </nav>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p class="footer-cursive">Obrigada por apoiar o nosso negócio!</p>
+      <p class="footer-caption">Atendimento com amor em cada detalhe.</p>
+    </div>
+
+  </div>
+
+</body>
+</html>
